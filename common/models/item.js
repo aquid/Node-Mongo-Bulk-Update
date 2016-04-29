@@ -104,7 +104,7 @@ module.exports = function(Item) {
 	Item.remoteMethod('bulkUpload',
 	{
 		accepts: { arg:'data', type: 'object', http: { source: 'body' } },
-		returns: {arg: 'greeting', type: 'string'},
+		returns: {arg: 'updated', type: 'object'},
 		http: {path: '/bulk-update', verb: 'put'}
 	});
 };
