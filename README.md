@@ -31,3 +31,17 @@ We define three models `oranisation` , `store` and `item` where store and item b
 ```
 
 The bulk update method accepts a object payload consisting orgId, storeId and an array of items, then it iterates over each item to update/upsert the item based on the inventory data passed to the method. If the inventory update is for a existing store, method will just update the inventory value or else if inventory is for a new store it will add a new store in the inventory object of our schema.
+
+# Inventory related queries
+
+Get all the items inventory data across particular organisation
+
+```
+GET /organisations/{id}/items
+```
+
+Get all the items inventory data across particluar store
+
+```
+GET /organisations/{id}/store/{storeId}/items-inventory
+```
