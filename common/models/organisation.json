@@ -1,0 +1,32 @@
+{
+  "name": "organisation",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "stores": {
+      "type": "hasMany",
+      "model": "store",
+      "foreignKey": "orgId"
+    },
+    "items": {
+      "type": "hasMany",
+      "model": "item",
+      "foreignKey": "orgId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

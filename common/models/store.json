@@ -1,0 +1,28 @@
+{
+  "name": "store",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "organisation": {
+      "type": "belongsTo",
+      "model": "organisation",
+      "foreignKey": "orgId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

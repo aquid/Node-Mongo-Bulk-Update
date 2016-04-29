@@ -1,0 +1,36 @@
+{
+  "name": "item",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "SKU": {
+      "type": "string",
+      "required": true
+    },
+    "inventory": {
+      "type": "object",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "organisation": {
+      "type": "belongsTo",
+      "model": "organisation",
+      "foreignKey": "orgId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
