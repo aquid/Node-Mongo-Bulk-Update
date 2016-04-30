@@ -7,12 +7,12 @@ Install StrongLoop:
 $ npm install -g strongloop
 ```
 
-# Bulk Update using Loopback an Mongo
+# Bulk Update using Loopback and Mongo
 
-This project provieds a simple method to do bulk update using loopback and mongodb. We can do bulk updates using node
+This project provides a simple method to do bulk update using loopback and mongodb. We can do bulk updates using node
 [UnorderedBulkOperation](https://mongodb.github.io/node-mongodb-native/api-generated/unordered.html#). This project shows a method to do bulk updates/upserts with nested object key value pairs. 
 
-We define three models `oranisation` , `store` and `item` where store and item belongs to a organisation. Every item has some inventory accross different stores. Inventory details are stored in item model using a nested key value schema where inventory has storeId's a key and inventory data as value. 
+We define three models `oranisation`, `store` and `item` where store and item belongs to a organisation. Every item has some inventory across different stores. Inventory details are stored in item model using a nested key value schema where inventory has storeId's as key and inventory data as value. 
 
 ```
 *  {
@@ -30,17 +30,17 @@ We define three models `oranisation` , `store` and `item` where store and item b
 
 ```
 
-The bulk update method accepts a object payload consisting orgId, storeId and an array of items, then it iterates over each item to update/upsert the item based on the inventory data passed to the method. If the inventory update is for a existing store, method will just update the inventory value or else if inventory is for a new store it will add a new store in the inventory object of our schema.
+The bulk update method accepts a object payload consisting of orgId, storeId and an array of items, then it iterates over each item to update/upsert the item based on the inventory data passed to the method. If the inventory update is for an existing store, our method will just update the inventory value or else if inventory is for a new store then it will add a new store in the inventory object of our schema.
 
 # Inventory related queries
 
-Get all the items inventory data across particular organisation
+Get all the items' inventory data across a particular organisation
 
 ```
 GET /organisations/{id}/items
 ```
 
-Get all the items inventory data across particluar store
+Get all the items' inventory data from a particluar store
 
 ```
 GET /organisations/{id}/store/{storeId}/items-inventory
