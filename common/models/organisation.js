@@ -15,12 +15,12 @@ module.exports = function(Organisation) {
 		var storeIdString = 'inventory.'+storeId;
 
 		// include only store specific data and common details of item
-		var filedsObject = {};
-		filedsObject.id = true;
-		filedsObject.name = true;
-		filedsObject.SKU =  true;
-		filedsObject.inventory = true;
-		filedsObject[storeIdString] = true;
+		var fieldsObject = {};
+		fieldsObject.id = true;
+		fieldsObject.name = true;
+		fieldsObject.SKU =  true;
+		fieldsObject.inventory = true;
+		fieldsObject[storeIdString] = true;
 
 		// Where filter for the inventory search
 		var whereFilter = {};
@@ -29,7 +29,7 @@ module.exports = function(Organisation) {
 
 		item.find({
 			where: whereFilter ,
-			fields: filedsObject
+			fields: fieldsObject
 		}, function(err, results){
 			if(err){
 				callback(err);
